@@ -10,7 +10,7 @@
 
 
 # About
-
+Currently a WIP. Please check issues for things that are missing.
 Chalklines is a Light/Dark color scheme for neovim written in lua.
 
 # 🎁 Features
