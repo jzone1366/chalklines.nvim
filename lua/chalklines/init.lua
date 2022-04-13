@@ -2,29 +2,25 @@ local util = require 'chalklines.util'
 
 local M = {}
 
-local config = {}
-
 ---@param user_opts ChalklinesConfig
 function M.setup(user_opts)
   user_opts = user_opts or {}
   local opts = require('chalklines.options').get(user_opts)
   vim.g.chalklines_variant = 'main'
 
-  if opts.groups and type(opts.groups.headings) == 'string' then
-    opts.groups.headings = {
-      h1 = opts.groups.headings,
-      h2 = opts.groups.headings,
-      h3 = opts.groups.headings,
-      h4 = opts.groups.headings,
-      h5 = opts.groups.headings,
-      h6 = opts.groups.headings,
+  if opts.colorsMaps and type(opts.colorsMaps.headings) == 'string' then
+    opts.colorsMaps.headings = {
+      h1 = opts.colorsMaps.headings,
+      h2 = opts.colorsMaps.headings,
+      h3 = opts.colorsMaps.headings,
+      h4 = opts.colorsMaps.headings,
+      h5 = opts.colorsMaps.headings,
+      h6 = opts.colorsMaps.headings,
     }
   end
 
-  config = require('chalklines.config').get(opts)
-end
+  local cnf = require('chalklines.config').get(opts)
 
-function M.colorscheme()
   if vim.g.colors_name then
     vim.cmd 'hi clear'
   end
@@ -32,14 +28,10 @@ function M.colorscheme()
   vim.opt.termguicolors = true
   vim.g.colors_name = 'chalklines'
 
-  local theme = require('chalklines.mapper').get(config)
+  local theme = require('chalklines.mapper').get(cnf)
 
   for group, color in pairs(theme) do
-    if config.highlight_groups[group] ~= nil then
-      util.highlight(group, config.highlight_groups[group])
-    else
-      util.highlight(group, color)
-    end
+    util.highlight(group, color)
   end
 
   require 'chalklines.galaxyline.theme'

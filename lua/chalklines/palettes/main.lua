@@ -1,3 +1,4 @@
+---@class ChalklinesPalette
 local palette = {
   meta = {},
   base = '#181818', -- base

@@ -65,9 +65,8 @@ local defaults = {
   },
 }
 
-function M.get(cnf)
-  if cnf then
-    local ovr = cnf.colorMaps or {}
+function M.get(ovr)
+  if ovr and ovr.colorMaps then
     return collect.deep_extend(defaults, ovr)
   end
   return defaults

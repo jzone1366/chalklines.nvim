@@ -32,7 +32,7 @@ local defaults = {
   sneak = true,
   symbol_outline = true,
   telescope = true,
-  telekasten = false, -- NEED TO IMPLEMENT
+  telekasten = true,
   treesitter = true,
   tsrainbow = true,
   vimwiki = true,
@@ -40,10 +40,9 @@ local defaults = {
 }
 
 ---@class ChalklinesModules
-function M.get(cnf)
-  if cnf then
-    local ovr = cnf.modules or {}
-    return collect.deep_extend(defaults, ovr)
+function M.get(ovr)
+  if ovr and ovr.modules then
+    return collect.deep_extend(defaults, ovr.modules)
   end
   return defaults
 end

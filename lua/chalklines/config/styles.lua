@@ -10,7 +10,7 @@ local defaults = {
 }
 
 function M.get(cnf)
-  if cnf then
+  if cnf and cnf.options then
     local options = cnf.options
     local ovr = {
       italics = options.disable_italics,
