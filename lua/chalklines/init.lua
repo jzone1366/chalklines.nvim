@@ -19,7 +19,7 @@ function M.setup(user_opts)
     }
   end
 
-  local cnf = require('chalklines.config').get(opts)
+  local cnf = require('chalklines.config').create(opts)
 
   if vim.g.colors_name then
     vim.cmd 'hi clear'

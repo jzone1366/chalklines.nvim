@@ -1,41 +1,45 @@
 local M = {}
 
-function M.get(_, groups)
+function M.get(cnf)
+  local p = cnf.palette
+  local colorMaps = cnf.colorMaps
+  local styles = cnf.styles
+
   return {
-    DiagnosticError = { fg = groups.error },
-    DiagnosticHint = { fg = groups.hint },
-    DiagnosticInfo = { fg = groups.info },
-    DiagnosticWarn = { fg = groups.warn },
+    DiagnosticError = { fg = colorMaps.error },
+    DiagnosticHint = { fg = colorMaps.hint },
+    DiagnosticInfo = { fg = colorMaps.info },
+    DiagnosticWarn = { fg = colorMaps.warn },
 
-    DiagnosticSignError = { fg = groups.error },
-    DiagnosticSignHint = { fg = groups.hint },
-    DiagnosticSignInfo = { fg = groups.info },
-    DiagnosticSignWarn = { fg = groups.warn },
+    DiagnosticSignError = { fg = colorMaps.error },
+    DiagnosticSignHint = { fg = colorMaps.hint },
+    DiagnosticSignInfo = { fg = colorMaps.info },
+    DiagnosticSignWarn = { fg = colorMaps.warn },
 
-    DiagnosticDefaultError = { fg = groups.error },
-    DiagnosticDefaultHint = { fg = groups.hint },
-    DiagnosticDefaultInfo = { fg = groups.info },
-    DiagnosticDefaultWarn = { fg = groups.warn },
+    DiagnosticDefaultError = { fg = colorMaps.error },
+    DiagnosticDefaultHint = { fg = colorMaps.hint },
+    DiagnosticDefaultInfo = { fg = colorMaps.info },
+    DiagnosticDefaultWarn = { fg = colorMaps.warn },
 
-    DiagnosticFloatingError = { fg = groups.error },
-    DiagnosticFloatingHint = { fg = groups.hint },
-    DiagnosticFloatingInfo = { fg = groups.info },
-    DiagnosticFloatingWarn = { fg = groups.warn },
+    DiagnosticFloatingError = { fg = colorMaps.error },
+    DiagnosticFloatingHint = { fg = colorMaps.hint },
+    DiagnosticFloatingInfo = { fg = colorMaps.info },
+    DiagnosticFloatingWarn = { fg = colorMaps.warn },
 
-    DiagnosticStatusLineError = { fg = groups.error, bg = groups.panel },
-    DiagnosticStatusLineHint = { fg = groups.hint, bg = groups.panel },
-    DiagnosticStatusLineInfo = { fg = groups.info, bg = groups.panel },
-    DiagnosticStatusLineWarn = { fg = groups.warn, bg = groups.panel },
+    DiagnosticStatusLineError = { fg = colorMaps.error, bg = colorMaps.panel },
+    DiagnosticStatusLineHint = { fg = colorMaps.hint, bg = colorMaps.panel },
+    DiagnosticStatusLineInfo = { fg = colorMaps.info, bg = colorMaps.panel },
+    DiagnosticStatusLineWarn = { fg = colorMaps.warn, bg = colorMaps.panel },
 
-    DiagnosticUnderlineError = { sp = groups.error, style = 'undercurl' },
-    DiagnosticUnderlineHint = { sp = groups.hint, style = 'undercurl' },
-    DiagnosticUnderlineInfo = { sp = groups.info, style = 'undercurl' },
-    DiagnosticUnderlineWarn = { sp = groups.warn, style = 'undercurl' },
+    DiagnosticUnderlineError = { sp = colorMaps.error, style = 'undercurl' },
+    DiagnosticUnderlineHint = { sp = colorMaps.hint, style = 'undercurl' },
+    DiagnosticUnderlineInfo = { sp = colorMaps.info, style = 'undercurl' },
+    DiagnosticUnderlineWarn = { sp = colorMaps.warn, style = 'undercurl' },
 
-    DiagnosticVirtualTextError = { fg = groups.error },
-    DiagnosticVirtualTextHint = { fg = groups.hint },
-    DiagnosticVirtualTextInfo = { fg = groups.info },
-    DiagnosticVirtualTextWarn = { fg = groups.warn },
+    DiagnosticVirtualTextError = { fg = colorMaps.error },
+    DiagnosticVirtualTextHint = { fg = colorMaps.hint },
+    DiagnosticVirtualTextInfo = { fg = colorMaps.info },
+    DiagnosticVirtualTextWarn = { fg = colorMaps.warn },
   }
 end
 

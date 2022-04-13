@@ -10,13 +10,14 @@ local defaults = {
 }
 
 function M.get(cnf)
+  local formats = require 'chalklines.formats'
   if cnf and cnf.options then
-    local options = cnf.options
+    local opts = cnf.options
     local ovr = {
-      italics = options.disable_italics,
-      vert_split = options.bold_vert_split,
-      background = options.disable_background,
-      float_background = options.disable_float_background,
+      italic = (opts.disable_italics and cnf.palette.none) or formats.italic,
+      vert_split = (opts.bold_vert_split and cnf.colorMaps.border) or cnf.palette.none,
+      background = (opts.disable_background and cnf.palette.none) or cnf.colorMaps.background,
+      float_background = (opts.disable_float_background and cnf.palette.none) or cnf.colorMaps.panel,
     }
     return collect.deep_extend(defaults, ovr)
   end

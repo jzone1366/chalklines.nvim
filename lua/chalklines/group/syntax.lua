@@ -1,10 +1,14 @@
 local M = {}
 
-function M.get(p, groups, styles)
+function M.get(cnf)
+  local p = cnf.palette
+  local colorMaps = cnf.colorMaps
+  local styles = cnf.styles
+
   return {
     Boolean = { fg = p.cyan },
     Character = { fg = p.yellow },
-    Comment = { fg = groups.comment, style = styles.italic },
+    Comment = { fg = colorMaps.comment, style = styles.italic },
     Conditional = { fg = p.green },
     Constant = { fg = p.yellow },
     Debug = { fg = p.cyan },
@@ -41,31 +45,31 @@ function M.get(p, groups, styles)
     htmlArg = { fg = p.magenta },
     htmlBold = { style = 'bold' },
     htmlEndTag = { fg = p.subtle },
-    htmlH1 = { fg = groups.headings.h1, style = 'bold' },
-    htmlH2 = { fg = groups.headings.h2, style = 'bold' },
-    htmlH3 = { fg = groups.headings.h3, style = 'bold' },
-    htmlH4 = { fg = groups.headings.h4, style = 'bold' },
-    htmlH5 = { fg = groups.headings.h5, style = 'bold' },
+    htmlH1 = { fg = colorMaps.headings.h1, style = 'bold' },
+    htmlH2 = { fg = colorMaps.headings.h2, style = 'bold' },
+    htmlH3 = { fg = colorMaps.headings.h3, style = 'bold' },
+    htmlH4 = { fg = colorMaps.headings.h4, style = 'bold' },
+    htmlH5 = { fg = colorMaps.headings.h5, style = 'bold' },
     htmlItalic = { style = styles.italic },
-    htmlLink = { fg = groups.link },
+    htmlLink = { fg = colorMaps.link },
     htmlTag = { fg = p.subtle },
     htmlTagN = { fg = p.text },
     htmlTagName = { fg = p.blue },
 
     markdownDelimiter = { fg = p.subtle },
-    markdownH1 = { fg = groups.headings.h1, style = 'bold' },
+    markdownH1 = { fg = colorMaps.headings.h1, style = 'bold' },
     markdownH1Delimiter = { link = 'markdownH1' },
-    markdownH2 = { fg = groups.headings.h2, style = 'bold' },
+    markdownH2 = { fg = colorMaps.headings.h2, style = 'bold' },
     markdownH2Delimiter = { link = 'markdownH2' },
-    markdownH3 = { fg = groups.headings.h3, style = 'bold' },
+    markdownH3 = { fg = colorMaps.headings.h3, style = 'bold' },
     markdownH3Delimiter = { link = 'markdownH3' },
-    markdownH4 = { fg = groups.headings.h4, style = 'bold' },
+    markdownH4 = { fg = colorMaps.headings.h4, style = 'bold' },
     markdownH4Delimiter = { link = 'markdownH4' },
-    markdownH5 = { fg = groups.headings.h5, style = 'bold' },
+    markdownH5 = { fg = colorMaps.headings.h5, style = 'bold' },
     markdownH5Delimiter = { link = 'markdownH5' },
-    markdownH6 = { fg = groups.headings.h6, style = 'bold' },
+    markdownH6 = { fg = colorMaps.headings.h6, style = 'bold' },
     markdownH6Delimiter = { link = 'markdownH6' },
-    markdownLinkText = { fg = groups.link, style = 'underline' },
+    markdownLinkText = { fg = colorMaps.link, style = 'underline' },
     markdownUrl = { link = 'markdownLinkText' },
 
     mkdCode = { fg = p.blue, style = styles.italic },
@@ -74,7 +78,7 @@ function M.get(p, groups, styles)
     mkdCodeStart = { fg = p.blue },
     mkdFootnotes = { fg = p.blue },
     mkdID = { fg = p.blue, style = 'underline' },
-    mkdInlineURL = { fg = groups.link, style = 'underline' },
+    mkdInlineURL = { fg = colorMaps.link, style = 'underline' },
     mkdLink = { link = 'mkdInlineURL' },
     mkdLinkDef = { link = 'mkdInlineURL' },
     mkdListItemLine = { fg = p.text },

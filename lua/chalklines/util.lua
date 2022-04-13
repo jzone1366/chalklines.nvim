@@ -1,4 +1,5 @@
 local util = {}
+local cnf = require('chalklines.config').get()
 
 local function byte(value, offset)
   return bit.band(bit.rshift(value, offset), 0xFF)
@@ -22,7 +23,7 @@ local function parse_color(color)
   color = color:lower()
 
   if not color:find '#' and color ~= 'none' then
-    color = require('chalklines.palette')[color] or vim.api.nvim_get_color_by_name(color)
+    color = cnf.palette[color] or vim.api.nvim_get_color_by_name(color)
   end
 
   return color

@@ -2,24 +2,28 @@
 
 local M = {}
 
-function M.get(p, groups, styles)
+function M.get(cnf)
+  local p = cnf.palette
+  local colorMaps = cnf.colorMaps
+  local styles = cnf.styles
+
   return {
-    NeogitBranch = { fg = groups.warn },
-    NeogitRemote = { fg = groups.hint },
+    NeogitBranch = { fg = colorMaps.warn },
+    NeogitRemote = { fg = colorMaps.hint },
 
-    NeogitHunkHeader = { fg = groups.info, bg = p.hl_low },
-    NeogitHunkHeaderHighlight = { fg = groups.info, bg = p.hl_high },
+    NeogitHunkHeader = { fg = colorMaps.info, bg = p.hl_low },
+    NeogitHunkHeaderHighlight = { fg = colorMaps.info, bg = p.hl_high },
 
-    NeogitDiffAdd = { fg = groups.git_add },
-    NeogitDiffDelete = { fg = groups.git_delete },
+    NeogitDiffAdd = { fg = colorMaps.git_add },
+    NeogitDiffDelete = { fg = colorMaps.git_delete },
 
     NeogitDiffAddHighlight = { fg = p.blue, bg = p.hl_med },
     NeogitDiffDeleteHighlight = { bg = p.hl_low },
     NeogitDiffContextHighlight = { fg = p.red, bg = p.hl_med },
 
-    NeogitNotificationInfo = { fg = groups.info },
-    NeogitNotificationWarning = { fg = groups.warn },
-    NeogitNotificationError = { fg = groups.error },
+    NeogitNotificationInfo = { fg = colorMaps.info },
+    NeogitNotificationWarning = { fg = colorMaps.warn },
+    NeogitNotificationError = { fg = colorMaps.error },
   }
 end
 

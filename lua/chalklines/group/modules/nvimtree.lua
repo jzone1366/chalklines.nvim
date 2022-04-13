@@ -1,7 +1,11 @@
 -- kyazdani42/nvim-tree.lua
 local M = {}
 
-function M.get(p, groups)
+function M.get(cnf)
+  local p = cnf.palette
+  local colorMaps = cnf.colorMaps
+  local styles = cnf.styles
+
   return {
     NvimTreeNormal = { fg = p.text },
     NvimTreeVertSplit = { link = 'VertSplit' },
@@ -12,19 +16,19 @@ function M.get(p, groups)
     NvimTreeFolderIcon = { fg = p.blue },
     NvimTreeOpenedFolderName = { fg = p.blue },
     NvimTreeEmptyFolderName = { fg = p.muted },
-    NvimTreeSymLink = { fg = groups.link },
+    NvimTreeSymLink = { fg = colorMaps.link },
     NvimTreeSpecialFile = { link = 'NvimTreeNormal' },
     NvimTreeImageFile = { fg = p.text },
     NvimTreeOpenedFile = { fg = p.text, bg = p.hl_med },
-    NvimTreeWindowPicker = { fg = groups.background, bg = p.magenta },
+    NvimTreeWindowPicker = { fg = colorMaps.background, bg = p.magenta },
 
-    NvimTreeGitDeleted = { fg = groups.git_delete },
-    NvimTreeGitDirty = { fg = groups.git_dirty },
-    NvimTreeGitMerge = { fg = groups.git_merge },
-    NvimTreeGitIgnored = { fg = groups.git_ignore },
-    NvimTreeGitNew = { fg = groups.git_add },
-    NvimTreeGitRenamed = { fg = groups.git_rename },
-    NvimTreeGitStaged = { fg = groups.git_stage },
+    NvimTreeGitDeleted = { fg = colorMaps.git_delete },
+    NvimTreeGitDirty = { fg = colorMaps.git_dirty },
+    NvimTreeGitMerge = { fg = colorMaps.git_merge },
+    NvimTreeGitIgnored = { fg = colorMaps.git_ignore },
+    NvimTreeGitNew = { fg = colorMaps.git_add },
+    NvimTreeGitRenamed = { fg = colorMaps.git_rename },
+    NvimTreeGitStaged = { fg = colorMaps.git_stage },
 
     NvimTreeFileDeleted = { fg = p.red },
     NvimTreeFileDirty = { fg = p.cyan },

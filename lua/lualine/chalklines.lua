@@ -1,4 +1,4 @@
-local p = require 'chalklines.palette'
+local p = require('chalklines.palette').init()
 
 return {
   normal = {

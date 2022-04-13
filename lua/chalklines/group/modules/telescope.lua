@@ -2,9 +2,13 @@
 
 local M = {}
 
-function M.get(p, groups)
+function M.get(cnf)
+  local p = cnf.palette
+  local colorMaps = cnf.colorMaps
+  local styles = cnf.styles
+
   return {
-    TelescopeBorder = { fg = groups.border },
+    TelescopeBorder = { fg = colorMaps.border },
     TelescopeMatching = { fg = p.cyan },
     TelescopeNormal = { fg = p.subtle },
     TelescopePromptNormal = { fg = p.text },

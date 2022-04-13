@@ -23,37 +23,37 @@ local function get_terminal(p)
 end
 
 function M.get(cnf)
-  local formats = require 'chalklines.formats'
-  local palette = require 'chalklines.palette'
+  --local formats = require 'chalklines.formats'
+  --local palette = cnf.palette
 
-  local colorMaps = cnf.colorMaps
+  --local colorMaps = cnf.colorMaps
 
-  local styles = {
-    italic = (cnf.disable_italics and palette.none) or formats.italic,
-    vert_split = (cnf.bold_vert_split and colorMaps.border) or palette.none,
-    background = (cnf.disable_background and palette.none) or colorMaps.background,
-    float_background = (cnf.disable_float_background and palette.none) or colorMaps.panel,
-  }
+  --local styles = {
+  --  italic = (cnf.disable_italics and palette.none) or formats.italic,
+  --  vert_split = (cnf.bold_vert_split and colorMaps.border) or palette.none,
+  --  background = (cnf.disable_background and palette.none) or colorMaps.background,
+  --  float_background = (cnf.disable_float_background and palette.none) or colorMaps.panel,
+  --}
 
-  local editor = require('chalklines.group.editor').get(palette, colorMaps, styles)
-  local syntax = require('chalklines.group.syntax').get(palette, colorMaps, styles)
+  local editor = require('chalklines.group.editor').get(cnf)
+  local syntax = require('chalklines.group.syntax').get(cnf)
 
   local theme = collect.deep_extend(editor, syntax)
 
   for name, opts in pairs(cnf.modules or {}) do
     if type(opts) == 'table' then
       if opts.enable then
-        theme = collect.deep_extend(theme, require('chalklines.group.modules.' .. name).get(palette, colorMaps, styles))
+        theme = collect.deep_extend(theme, require('chalklines.group.modules.' .. name).get(cnf))
       end
     else
       if opts then
-        theme = collect.deep_extend(theme, require('chalklines.group.modules.' .. name).get(palette, colorMaps, styles))
+        theme = collect.deep_extend(theme, require('chalklines.group.modules.' .. name).get(cnf))
       end
     end
   end
 
   -- create terminal colors.
-  get_terminal(palette)
+  get_terminal(cnf.palette)
 
   return theme
 end

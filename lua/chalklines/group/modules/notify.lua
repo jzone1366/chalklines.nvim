@@ -1,7 +1,11 @@
 -- rcarriga/nvim-notify
 local M = {}
 
-function M.get(p)
+function M.get(cnf)
+  local p = cnf.palette
+  local colorMaps = cnf.colorMaps
+  local styles = cnf.styles
+
   return {
     NotifyERRORBorder = { fg = p.red },
     NotifyWARNBorder = { fg = p.yellow },

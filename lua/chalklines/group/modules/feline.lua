@@ -26,7 +26,7 @@ local assets = {
   slim_dot = '•',
 }
 
-local p = require 'chalklines.palette'
+local p = require 'chalklines.palettes'
 
 -- settings
 local sett = {
