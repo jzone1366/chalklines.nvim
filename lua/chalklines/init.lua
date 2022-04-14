@@ -4,22 +4,21 @@ local M = {}
 
 ---@param user_opts ChalklinesConfig
 function M.setup(user_opts)
-  user_opts = user_opts or {}
-  local opts = require('chalklines.options').get(user_opts)
+  local opts = user_opts or {}
   vim.g.chalklines_variant = 'main'
 
-  if opts.colorsMaps and type(opts.colorsMaps.headings) == 'string' then
-    opts.colorsMaps.headings = {
-      h1 = opts.colorsMaps.headings,
-      h2 = opts.colorsMaps.headings,
-      h3 = opts.colorsMaps.headings,
-      h4 = opts.colorsMaps.headings,
-      h5 = opts.colorsMaps.headings,
-      h6 = opts.colorsMaps.headings,
+  local cnf = require('chalklines.config').create(opts)
+
+  if cnf.colorsMaps and type(cnf.colorsMaps.headings) == 'string' then
+    cnf.colorsMaps.headings = {
+      h1 = cnf.colorsMaps.headings,
+      h2 = cnf.colorsMaps.headings,
+      h3 = cnf.colorsMaps.headings,
+      h4 = cnf.colorsMaps.headings,
+      h5 = cnf.colorsMaps.headings,
+      h6 = cnf.colorsMaps.headings,
     }
   end
-
-  local cnf = require('chalklines.config').create(opts)
 
   if vim.g.colors_name then
     vim.cmd 'hi clear'

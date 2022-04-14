@@ -26,7 +26,8 @@ local assets = {
   slim_dot = '•',
 }
 
-local p = require 'chalklines.palettes'
+local cnf = require('chalklines.config').get()
+local p = cnf.palette
 
 -- settings
 local sett = {

@@ -1,5 +1,4 @@
 local util = {}
-local cnf = require('chalklines.config').get()
 
 local function byte(value, offset)
   return bit.band(bit.rshift(value, offset), 0xFF)
@@ -16,6 +15,8 @@ local function rgb(color)
 end
 
 local function parse_color(color)
+  local cnf = require('chalklines.config').get()
+
   if color == nil then
     return print 'invalid color'
   end
@@ -57,6 +58,10 @@ util.highlight = function(group, color)
   if color.link then
     vim.cmd(string.format('highlight! link %s %s', group, color.link))
   end
+end
+
+function util.ensure_dir(path)
+  os.execute(string.format('mkdir %s %s', util.is_windows and '' or '-p', path))
 end
 
 return util

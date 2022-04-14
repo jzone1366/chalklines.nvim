@@ -15,12 +15,12 @@ local palette = {
   magenta = '#BA76E7', -- iris
   red = '#FF355B', -- love
   yellow = '#FFC251', -- gold
+  orange = '#F34B00',
 
   hl_low = '#212121', -- highlight_low
   hl_med = '#333333', -- highlight_med
   hl_high = '#474747', -- highlight_high
 
-  orange = '#F34B00',
   white = '#E7E7E7',
 
   opacity = 0.1,

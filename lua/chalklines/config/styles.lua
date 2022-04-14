@@ -11,6 +11,7 @@ local defaults = {
 
 function M.get(cnf)
   local formats = require 'chalklines.formats'
+
   if cnf and cnf.options then
     local opts = cnf.options
     local ovr = {
@@ -19,8 +20,10 @@ function M.get(cnf)
       background = (opts.disable_background and cnf.palette.none) or cnf.colorMaps.background,
       float_background = (opts.disable_float_background and cnf.palette.none) or cnf.colorMaps.panel,
     }
+
     return collect.deep_extend(defaults, ovr)
   end
+
   return defaults
 end
 
