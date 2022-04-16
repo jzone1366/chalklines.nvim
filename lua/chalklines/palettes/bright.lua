@@ -16,6 +16,7 @@ local palette = {
   red = '#FF355B', -- love
   yellow = '#D68B00', -- gold
   orange = '#F34B00',
+  pink = '#DD56A1',
 
   hl_low = '#DEDEDE', -- highlight_low
   hl_med = '#CBCBCB', -- highlight_med

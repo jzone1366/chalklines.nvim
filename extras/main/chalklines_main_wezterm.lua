@@ -11,7 +11,7 @@ return {
     cursor_border = "#F34B00",
     cursor_fg = "#181818",
 
-    selection_bg = "#C1C7D6",
+    selection_bg = "#333333",
     selection_fg = "#181818",
 
     ansi = { "#181818", "#FF355B", "#B7E876", "#FFC251", "#76D5FF", "#BA76E7", "#6CBFB5", "#C1C7D6" },

@@ -1,0 +1,32 @@
+# Chalklines Alacritty Colors
+# Style: chalklines_main
+# Upstream: https://github.com/jzone1366/chalklines.nvim/raw/main/extra/main/chalklines_main_alacritty.yml
+colors:
+  # Default colors
+  primary:
+    background: '0x181818'
+    foreground: '0xC1C7D6'
+  # Normal colors
+  normal:
+    black:   '0x181818'
+    red:     '0xFF355B'
+    green:   '0xB7E876'
+    yellow:  '0xFFC251'
+    blue:    '0x76D5FF'
+    magenta: '0xBA76E7'
+    cyan:    '0x6CBFB5'
+    white:   '0xC1C7D6'
+  # Bright colors
+  bright:
+    black:   '0x181818'
+    red:     '0xFF355B'
+    green:   '0xB7E876'
+    yellow:  '0xFFC251'
+    blue:    '0x76D5FF'
+    magenta: '0xBA76E7'
+    cyan:    '0x6CBFB5'
+    white:   '0xC1C7D6'
+  indexed_colors:
+    { index: 16, color: '0xF34B00' }
+    { index: 17, color: '0xDD56A1' }
+  

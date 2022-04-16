@@ -1,0 +1,25 @@
+{
+    "name" : "chalklines_main",
+
+    "background" : "#181818",
+    "foreground" : "#C1C7D6",
+
+    "black" : "#181818",
+    "blue" : "#76D5FF",
+    "cyan" : "#6CBFB5",
+    "green" : "#B7E876",
+    "purple" : "#BA76E7",
+    "red" : "#FF355B",
+    "white" : "#C1C7D6",
+    "yellow" : "#FFC251",
+
+    "brightBlack" : "#181818",
+    "brightBlue" : "#76D5FF",
+    "brightCyan" : "#6CBFB5",
+    "brightGreen" : "#B7E876",
+    "brightPurple" : "#BA76E7",
+    "brightRed" : "#FF355B",
+    "brightWhite" : "#C1C7D6",
+    "brightYellow" : "#FFC251"
+},
+  

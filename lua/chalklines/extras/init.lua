@@ -10,20 +10,19 @@ local function write(str, filename)
 end
 
 local extras = {
-  --	alacritty = "yml",
-  --	fish = "fish",
-  --	kitty = "conf",
-  --	iterm = "itermcolors",
+  alacritty = 'yml',
+  fish = 'fish',
+  kitty = 'conf',
+  iterm = 'itermcolors',
   tmux = 'tmux',
   wezterm = 'lua',
-  --	windows_terminal = "json",
-  --	xresources = "Xresources",
+  windows_terminal = 'json',
+  xresources = 'Xresources',
 }
 
 for extra, ext in pairs(extras) do
   local plugin = require('chalklines.extras.' .. extra)
   for _, style in ipairs(color_module.styles) do
-    print(style)
     local colors = require(string.format('chalklines.palettes.%s', style))
     local filename = string.format('%s/chalklines_%s_%s.%s', style, style, extra, ext)
     colors.meta.name = string.format('chalklines_%s', style)

@@ -19,7 +19,7 @@ return {
     cursor_border = "${orange}",
     cursor_fg = "${base}",
 
-    selection_bg = "${text}",
+    selection_bg = "${hl_med}",
     selection_fg = "${base}",
 
     ansi = { "${base}", "${red}", "${green}", "${yellow}", "${blue}", "${magenta}", "${cyan}", "${text}" },
