@@ -1,6 +1,10 @@
 local M = {}
 
-function M.get(p, groups, styles)
+function M.get(cnf)
+  local p = cnf.palette
+  local colorMaps = cnf.colorMaps
+  local styles = cnf.styles
+
   -- stylua: ignore
   return {
     TSAttribute          = { link = 'Constant' }, -- Annotations that can be attached to the code to denote some kind of meta information. e.g. C++/Dart attributes.
@@ -33,9 +37,9 @@ function M.get(p, groups, styles)
     TSParameter          = { fg = p.magenta, style = styles.italic }, -- Parameters of a function.
     -- TSParameterReference = {}, -- References to parameters of a function.
     TSProperty           = { link = 'TSField' }, -- Same as `TSField`.
-    TSPunctDelimiter     = { fg = groups.punctuation }, -- Punctuation delimiters: Periods, commas, semicolons, etc.
-    TSPunctBracket       = { fg = groups.punctuation }, -- Brackets, braces, parentheses, etc.
-    TSPunctSpecial       = { fg = groups.punctuation }, -- Special punctuation that doesn't fit into the previous categories.
+    TSPunctDelimiter     = { fg = colorMaps.punctuation }, -- Punctuation delimiters: Periods, commas, semicolons, etc.
+    TSPunctBracket       = { fg = colorMaps.punctuation }, -- Brackets, braces, parentheses, etc.
+    TSPunctSpecial       = { fg = colorMaps.punctuation }, -- Special punctuation that doesn't fit into the previous categories.
     -- TSRepeat             = {}, -- Keywords related to loops: `for`, `while`, etc.
     TSString             = { link = 'String'}, -- String literals.
     -- TSStringRegex        = {}, -- Regular expression literals.
@@ -50,16 +54,16 @@ function M.get(p, groups, styles)
     -- TSEmphasis           = {}, -- Text to be represented with emphasis.
     -- TSUnderline          = {}, -- Text to be represented with an underline.
     -- TSStrike             = {}, -- Strikethrough text.
-    TSTitle              = { fg = groups.headings.h1, style = 'bold' }, -- Text that is part of a title.
+    TSTitle              = { fg = colorMaps.headings.h1, style = 'bold' }, -- Text that is part of a title.
     -- TSLiteral            = {}, -- Literal or verbatim text.
-    TSURI                = { fg = groups.link }, -- URIs like hyperlinks or email addresses.
+    TSURI                = { fg = colorMaps.link }, -- URIs like hyperlinks or email addresses.
     -- TSMath               = {}, -- Math environments like LaTeX's `$ ... $`
     TSTextReference      = { fg = p.subtle }, -- Footnotes, text references, citations, etc.
     -- TSEnvironment        = {}, -- Text environments of markup languages.
     -- TSEnvironmentName    = {}, -- Text/string indicating the type of text environment. Like the name of a `\begin` block in LaTeX.
-    TSNote               = { fg = groups.info }, -- Text representation of an informational note.
-    TSWarning            = { fg = groups.warn }, -- Text representation of a warning note.
-    TSDanger             = { fg = groups.error }, -- Text representation of a danger note.
+    TSNote               = { fg = colorMaps.info }, -- Text representation of an informational note.
+    TSWarning            = { fg = colorMaps.warn }, -- Text representation of a warning note.
+    TSDanger             = { fg = colorMaps.error }, -- Text representation of a danger note.
     TSType               = { link = 'Type' }, -- Type (and class) definitions and annotations.
     -- TSTypeBuiltin        = {}, -- Built-in types: `i32` in Rust.
     TSVariable           = { fg = p.text, style = styles.italic }, -- Variable names that don't fit into other categories.

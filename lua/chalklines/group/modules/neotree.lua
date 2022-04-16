@@ -3,7 +3,11 @@
 
 local M = {}
 
-function M.get(p, groups)
+function M.get(cnf)
+  local p = cnf.palette
+  local colorMaps = cnf.colorMaps
+  local styles = cnf.styles
+
   -- stylua: ignore
   return {
     NeoTreeNormal             = { fg = p.text },
@@ -19,11 +23,11 @@ function M.get(p, groups)
     NeoTreeFileNameOpened     = { fg = p.magenta },
     NeoTreeDimText            = { link = "Conceal" },
 
-    NeoTreeGitModified        = { fg = groups.git_dirty },
-    NeoTreeGitAdded           = { fg = groups.git_add },
-    NeoTreeGitDeleted         = { fg = groups.git_delete },
+    NeoTreeGitModified        = { fg = colorMaps.git_dirty },
+    NeoTreeGitAdded           = { fg = colorMaps.git_add },
+    NeoTreeGitDeleted         = { fg = colorMaps.git_delete },
     NeoTreeGitConflict        = { fg = p.orange, style = "italic" },
-    NeoTreeGitIgnored         = { fg = groups.git_ignore },
+    NeoTreeGitIgnored         = { fg = colorMaps.git_ignore },
     NeoTreeGitUntracked       = { fg = p.yellow }
 
   }

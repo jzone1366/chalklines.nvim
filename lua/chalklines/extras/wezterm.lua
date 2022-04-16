@@ -1,10 +1,10 @@
-local util = require 'chalklines.utils'
+local template = require 'chalklines.lib.template'
 
 local M = {}
 
 --- @param colors ColorScheme
 function M.generate(colors)
-  local wezterm = util.template(
+  local wezterm = template.parse_template_str(
     [[
 -- Chalklines Wezterm Colors
 -- Style: ${meta.name}
@@ -19,7 +19,7 @@ return {
     cursor_border = "${orange}",
     cursor_fg = "${base}",
 
-    selection_bg = "${text}",
+    selection_bg = "${hl_med}",
     selection_fg = "${base}",
 
     ansi = { "${base}", "${red}", "${green}", "${yellow}", "${blue}", "${magenta}", "${cyan}", "${text}" },

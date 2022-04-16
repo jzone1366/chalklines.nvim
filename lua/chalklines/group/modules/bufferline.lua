@@ -2,7 +2,11 @@
 
 local M = {}
 
-function M.get(p, groups)
+function M.get(cnf)
+  local p = cnf.palette
+  local colorMaps = cnf.colorMaps
+  local styles = cnf.styles
+
   local inactive_bg = p.base
 
   -- stylua: ignore
@@ -24,12 +28,12 @@ function M.get(p, groups)
     BufferLineCloseButtonVisible  = { fg = p.subtle, bg = inactive_bg },
     BufferLineCloseButtonSelected = { fg = p.red, bg = p.surface },
     -- modified
-    BufferLineModified            = { fg = groups.hint,  bg = p.base },
-    BufferLineModifiedVisible     = { fg = groups.hint,  bg = p.hl_med },
-    BufferLineModifiedSelected    = { fg = groups.hint,  bg = p.hl_high },
+    BufferLineModified            = { fg = colorMaps.hint,  bg = p.base },
+    BufferLineModifiedVisible     = { fg = colorMaps.hint,  bg = p.hl_med },
+    BufferLineModifiedSelected    = { fg = colorMaps.hint,  bg = p.hl_high },
     -- errors
-    BufferLineError               = { fg = groups.error, bg = groups.error },
-    BufferLineErrorDiagnostic     = { fg = groups.error, bg = groups.error },
+    BufferLineError               = { fg = colorMaps.error, bg = colorMaps.error },
+    BufferLineErrorDiagnostic     = { fg = colorMaps.error, bg = colorMaps.error },
   }
 end
 

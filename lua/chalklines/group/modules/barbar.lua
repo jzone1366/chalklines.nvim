@@ -1,7 +1,11 @@
 local M = {}
 
 -- romgrk/barbar.nvim
-function M.get(p, groups)
+function M.get(cnf)
+  local p = cnf.palette
+  local colorMaps = cnf.colorMaps
+  local styles = cnf.styles
+
   return {
     BufferCurrent = { fg = p.text, bg = p.overlay },
     BufferCurrentIndex = { fg = p.text, bg = p.overlay },
@@ -13,7 +17,7 @@ function M.get(p, groups)
     BufferInactiveMod = { fg = p.blue },
     BufferInactiveSign = { fg = p.muted },
     BufferInactiveTarget = { fg = p.yellow },
-    BufferTabpageFill = { fg = groups.background, bg = groups.background },
+    BufferTabpageFill = { fg = colorMaps.background, bg = colorMaps.background },
     BufferVisible = { fg = p.subtle },
     BufferVisibleIndex = { fg = p.subtle },
     BufferVisibleMod = { fg = p.blue },

@@ -1,7 +1,11 @@
 local blend = require('chalklines.util').blend
 local M = {}
 
-function M.get(p, groups, styles)
+function M.get(cnf)
+  local p = cnf.palette
+  local colorMaps = cnf.colorMaps
+  local styles = cnf.styles
+
   return {
     -- Comment = { fg = p.subtle }
     ColorColumn = { bg = p.hl_high },
@@ -11,21 +15,21 @@ function M.get(p, groups, styles)
     -- CursorIM = {},
     CursorLine = { bg = p.hl_low },
     CursorLineNr = { fg = p.text },
-    DarkenedPanel = { bg = groups.panel },
-    DarkenedStatusline = { bg = groups.panel },
-    DiffAdd = { bg = blend(groups.git_add, groups.background, 0.5) },
+    DarkenedPanel = { bg = colorMaps.panel },
+    DarkenedStatusline = { bg = colorMaps.panel },
+    DiffAdd = { bg = blend(colorMaps.git_add, colorMaps.background, 0.5) },
     DiffChange = { bg = p.overlay },
-    DiffDelete = { bg = blend(groups.git_delete, groups.background, 0.5) },
-    DiffText = { bg = blend(groups.git_text, groups.background, 0.5) },
+    DiffDelete = { bg = blend(colorMaps.git_delete, colorMaps.background, 0.5) },
+    DiffText = { bg = blend(colorMaps.git_text, colorMaps.background, 0.5) },
     diffAdded = { link = 'DiffAdd' },
     diffChanged = { link = 'DiffChange' },
     diffRemoved = { link = 'DiffDelete' },
     Directory = { fg = p.blue, bg = p.none },
     -- EndOfBuffer = {},
     ErrorMsg = { fg = p.red, style = 'bold' },
-    FloatBorder = { fg = groups.border },
+    FloatBorder = { fg = colorMaps.border },
     FoldColumn = { fg = p.muted },
-    Folded = { fg = p.text, bg = groups.panel },
+    Folded = { fg = p.text, bg = colorMaps.panel },
     IncSearch = { fg = p.base, bg = p.cyan },
     LineNr = { fg = p.muted },
     MatchParen = { fg = p.text, bg = p.hl_med },
@@ -61,7 +65,7 @@ function M.get(p, groups, styles)
     TabLineFill = { bg = styles.float_background },
     TabLineSel = { fg = p.text, bg = p.overlay },
     Title = { fg = p.text },
-    VertSplit = { fg = groups.border, bg = styles.vert_split },
+    VertSplit = { fg = colorMaps.border, bg = styles.vert_split },
     Visual = { bg = p.hl_med },
     -- VisualNOS = {},
     WarningMsg = { fg = p.yellow },

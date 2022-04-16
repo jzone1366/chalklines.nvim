@@ -1,4 +1,4 @@
-local util = require 'chalklines.utils.util'
+local template = require 'chalklines.lib.template'
 
 local M = {}
 
@@ -15,7 +15,7 @@ function M.generate(colors)
     end
   end
 
-  local tmux = util.template(
+  local tmux = template.parse_template_str(
     [[
 # NOTE: you can use vars with $<var> and ${<var>} as long as the str is double quoted: ""
 # WARNING: hex colors can't contain capital letters

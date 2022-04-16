@@ -2,12 +2,16 @@
 
 local M = {}
 
-function M.get(p, groups)
+function M.get(cnf)
+  local p = cnf.palette
+  local colorMaps = cnf.colorMaps
+  local styles = cnf.styles
+
   return {
-    HopNextKey = { bg = groups.background, fg = p.green, style = 'bold,underline' },
-    HopNextKey1 = { bg = groups.background, fg = p.blue, style = 'bold' },
-    HopNextKey2 = { bg = groups.background, fg = p.cyan, style = 'bold,italic' },
-    HopUnmatched = { bg = groups.background, fg = p.subtle },
+    HopNextKey = { bg = colorMaps.background, fg = p.green, style = 'bold,underline' },
+    HopNextKey1 = { bg = colorMaps.background, fg = p.blue, style = 'bold' },
+    HopNextKey2 = { bg = colorMaps.background, fg = p.cyan, style = 'bold,italic' },
+    HopUnmatched = { bg = colorMaps.background, fg = p.subtle },
   }
 end
 

@@ -3,7 +3,11 @@
 local M = {}
 
 -- glyph Palette
-function M.get(p)
+function M.get(cnf)
+  local p = cnf.palette
+  local colorMaps = cnf.colorMaps
+  local styles = cnf.styles
+
   return {
     GlyphPalette0 = { fg = p.surface },
     GlyphPalette1 = { fg = p.red },

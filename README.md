@@ -127,7 +127,7 @@ modules = {
   whichkey = true,
 },
 
-groups = {
+colorMaps = {
   background = 'base',
   panel = 'surface',
   border = 'hl_med',
@@ -159,7 +159,6 @@ groups = {
     h6 = 'blue',
   },
 },
-highlight_groups = {},
 }
 ```
 
@@ -218,16 +217,6 @@ This settings are unrelated to any group and are independent.
 
 -   `transparent_background`: (Boolean) if true, disables setting the background color.
 -   `term_colors`: (Boolean) if true, sets terminal colors (e.g. `g:terminal_color_0`).
-
-#### Styles
-
-Handles the style of general hi groups (see `:h highlight-args`):
-
--   `comments`: (String) changed the style of the comments.
--   `functions`: (String) changed the style of the functions.
--   `keywords`: (String) changed the style of the keywords.
--   `strings`: (String) changed the style of the strings.
--   `variables`: (String) changed the style of the variables.
 
 #### Integrations
 

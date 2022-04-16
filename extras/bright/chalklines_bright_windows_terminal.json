@@ -1,0 +1,25 @@
+{
+    "name" : "chalklines_bright",
+
+    "background" : "#E7E7E7",
+    "foreground" : "#525A69",
+
+    "black" : "#E7E7E7",
+    "blue" : "#00A4EB",
+    "cyan" : "#4EB1A6",
+    "green" : "#70AE1E",
+    "purple" : "#BA76E7",
+    "red" : "#FF355B",
+    "white" : "#525A69",
+    "yellow" : "#D68B00",
+
+    "brightBlack" : "#E7E7E7",
+    "brightBlue" : "#00A4EB",
+    "brightCyan" : "#4EB1A6",
+    "brightGreen" : "#70AE1E",
+    "brightPurple" : "#BA76E7",
+    "brightRed" : "#FF355B",
+    "brightWhite" : "#525A69",
+    "brightYellow" : "#D68B00"
+},
+  

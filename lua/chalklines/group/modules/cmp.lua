@@ -1,7 +1,12 @@
 local M = {}
 
 -- hrsh7th/nvim-cmp
-function M.get(p)
+function M.get(cnf)
+  local p = cnf.palette
+  local colorMaps = cnf.colorMaps
+  local styles = cnf.styles
+
+
   -- stylua: ignore
   return {
     CmpDocumentation         = { fg = p.subtle, bg = p.base },

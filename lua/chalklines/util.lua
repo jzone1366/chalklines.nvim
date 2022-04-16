@@ -15,6 +15,8 @@ local function rgb(color)
 end
 
 local function parse_color(color)
+  local cnf = require('chalklines.config').get()
+
   if color == nil then
     return print 'invalid color'
   end
@@ -22,7 +24,7 @@ local function parse_color(color)
   color = color:lower()
 
   if not color:find '#' and color ~= 'none' then
-    color = require('chalklines.palette')[color] or vim.api.nvim_get_color_by_name(color)
+    color = cnf.palette[color] or vim.api.nvim_get_color_by_name(color)
   end
 
   return color
@@ -56,6 +58,26 @@ util.highlight = function(group, color)
   if color.link then
     vim.cmd(string.format('highlight! link %s %s', group, color.link))
   end
+end
+
+util.ensure_dir = function(path)
+  os.execute(string.format('mkdir %s %s', util.is_windows and '' or '-p', path))
+end
+
+util.hex_to_rgb = function(hex_str)
+  local hex = '[abcdef0-9][abcdef0-9]'
+  local pat = '^#(' .. hex .. ')(' .. hex .. ')(' .. hex .. ')$'
+  hex_str = string.lower(hex_str)
+
+  assert(string.find(hex_str, pat) ~= nil, 'hex_to_rgb: invalid hex_str: ' .. tostring(hex_str))
+
+  local r, g, b = string.match(hex_str, pat)
+  return { tonumber(r, 16), tonumber(g, 16), tonumber(b, 16) }
+end
+
+util.hex_to_norm_rgb = function(hex_str)
+  local c = util.hex_to_rgb(hex_str)
+  return { c[1] / 255, c[2] / 255, c[3] / 255 }
 end
 
 return util

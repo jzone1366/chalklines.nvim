@@ -2,11 +2,15 @@
 
 local M = {}
 
-function M.get(_, groups)
+function M.get(cnf)
+  local p = cnf.palette
+  local colorMaps = cnf.colorMaps
+  local styles = cnf.styles
+
   return {
-    GitSignsAdd = { fg = groups.git_add },
-    GitSignsChange = { fg = groups.git_change },
-    GitSignsDelete = { fg = groups.git_delete },
+    GitSignsAdd = { fg = colorMaps.git_add },
+    GitSignsChange = { fg = colorMaps.git_change },
+    GitSignsDelete = { fg = colorMaps.git_delete },
 
     SignAdd = { link = 'GitSignsAdd' },
     SignChange = { link = 'GitSignsChange' },
