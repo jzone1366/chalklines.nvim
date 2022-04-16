@@ -127,7 +127,7 @@ modules = {
   whichkey = true,
 },
 
-groups = {
+colorMaps = {
   background = 'base',
   panel = 'surface',
   border = 'hl_med',
@@ -159,7 +159,6 @@ groups = {
     h6 = 'blue',
   },
 },
-highlight_groups = {},
 }
 ```
 
