@@ -16,7 +16,7 @@ function M.get(cnf)
     TSConstBuiltin       = { fg = p.orange }, -- Built-in constant values: `nil` in Lua.
     -- TSConstMacro         = {}, -- Constants defined by macros: `NULL` in C.
     TSConstructor        = { fg = p.blue }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
-    TSError              = { fg = p.red }, -- Syntax/parser errors. This might highlight large sections of code while the user is typing still incomplete code, use a sensible highlight.
+    TSError              = { fg = colorMaps.error }, -- Syntax/parser errors. This might highlight large sections of code while the user is typing still incomplete code, use a sensible highlight.
     -- TSException          = {}, -- Exception related keywords: `try`, `except`, `finally` in Python.
     TSField              = { fg = p.blue }, -- Object and struct fields.
     -- TSFloat              = {}, -- Floating-point number literals.
