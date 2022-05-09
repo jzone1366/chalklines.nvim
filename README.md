@@ -275,7 +275,11 @@ integration = {
   }
 }
 ```
-
+## Support Me
+<p align="center">
+	<a href="https://www.buymeacoffee.com/jzone1366"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a beer&emoji=🍺&slug=jzone1366&button_colour=f24b03&font_colour=000000&font_family=Lato&outline_colour=000000&coffee_colour=FFDD00" /></a>
+</p>
+	
 ## 💝 Heavily inspired by:
 
 -   [rose-pine](https://github.com/rose-pine/neovim)
