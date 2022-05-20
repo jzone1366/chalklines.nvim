@@ -58,12 +58,12 @@ Chalklines is a Light/Dark color scheme for neovim written in lua.
 
 |                                                         | Name          |    Hex    | Usage                                               |
 | :-----------------------------------------------------: | :------------ | :-------: | :-------------------------------------------------- |
-|   <img src="assets/base.svg" width="40">                | base          | `#181818` |                                                     |
-|   <img src="assets/surface.svg" width="40">             | surface       | `#242424` |                                                     |
-|   <img src="assets/overlay.svg" width="40">             | overlay       | `#303030` |                                                     |
-|   <img src="assets/text.svg" width="40">                | text          | `#C1C7D6` |                                                     |
-|   <img src="assets/subtle.svg" width="40">              | subtle        | `#727A8C` |                                                     |
-|   <img src="assets/muted.svg" width="40">               | muted         | `#525A69` |                                                     |
+|   <img src="assets/baseDark.svg" width="40">            | base          | `#181818` | Background                                          |
+|   <img src="assets/surfaceDark.svg" width="40">         | surface       | `#242424` | StatusLine                                          |
+|   <img src="assets/overlayDark.svg" width="40">         | overlay       | `#303030` | PopUps, Floats                                      |
+|   <img src="assets/textDark.svg" width="40">            | text          | `#C1C7D6` | Base Text, Foreground                               |
+|   <img src="assets/subtleDark.svg" width="40">          | subtle        | `#727A8C` | Subtle Text, comments                               |
+|   <img src="assets/mutedDark.svg" width="40">           | muted         | `#525A69` | Muted Text, virtual_text                            |
 |   <img src="assets/hl_lowDark.svg" width="40">          | hl_low        | `#212121` |                                                     |
 |   <img src="assets/hl_medDark.svg" width="40">          | hl_med        | `#333333` |                                                     |
 |   <img src="assets/hl_highDark.svg" width="40">         | hl_high       | `#474747` |                                                     |
