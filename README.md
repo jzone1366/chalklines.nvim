@@ -56,25 +56,25 @@ Chalklines is a Light/Dark color scheme for neovim written in lua.
 
 ## Color palette
 
-|                                                         | Name          |    Hex    | Usage                                               |
-| :-----------------------------------------------------: | :------------ | :-------: | :-------------------------------------------------- |
-|   <img src="assets/baseDark.svg" width="40">            | base          | `#181818` | Background                                          |
-|   <img src="assets/surfaceDark.svg" width="40">         | surface       | `#242424` | StatusLine                                          |
-|   <img src="assets/overlayDark.svg" width="40">         | overlay       | `#303030` | PopUps, Floats                                      |
-|   <img src="assets/textDark.svg" width="40">            | text          | `#C1C7D6` | Base Text, Foreground                               |
-|   <img src="assets/subtleDark.svg" width="40">          | subtle        | `#727A8C` | Subtle Text, comments                               |
-|   <img src="assets/mutedDark.svg" width="40">           | muted         | `#525A69` | Muted Text, virtual_text                            |
-|   <img src="assets/hl_lowDark.svg" width="40">          | hl_low        | `#212121` |                                                     |
-|   <img src="assets/hl_medDark.svg" width="40">          | hl_med        | `#333333` |                                                     |
-|   <img src="assets/hl_highDark.svg" width="40">         | hl_high       | `#474747` |                                                     |
-|   <img src="assets/redDark.svg" width="40">             | Red           | `#FF355B` |                                                     |
-|   <img src="assets/greenDark.svg" width="40">           | Green         | `#B7E876` |                                                     |
-|   <img src="assets/yellowDark.svg" width="40">          | Yellow        | `#FFC251` |                                                     |
-|   <img src="assets/blueDark.svg" width="40">            | Blue          | `#76D5FF` |                                                     |
-|   <img src="assets/magentaDark.svg" width="40">         | magenta       | `#BA76E7` |                                                     |
-|   <img src="assets/cyanDark.svg" width="40">            | cyan          | `#6CBFB5` |                                                     |
-|   <img src="assets/orangeDark.svg" width="40">          | orange        | `#F34B00` |                                                     |
-|   <img src="assets/pinkDark.svg" width="40">            | pink          | `#DD56A1` |                                                     |
+| Dark Palette                                   |    Hex    | Light Palette                                   |    Hex    | Name          | Usage                                               |
+| :----------------------------------------------| :-------: | :-----------------------------------------------| :-------: | :------------ | :-------------------------------------------------- |
+| <img src="assets/dark/base.svg" width="40">    | `#181818` |  <img src="assets/light/base.svg" width="40">   | `#E7E7E7` | base          | Background                                          |
+| <img src="assets/dark/surface.svg" width="40"> | `#242424` |  <img src="assets/light/surface.svg" width="40">| `#DBDBDB` | surface       | StatusLine                                          |
+| <img src="assets/dark/overlay.svg" width="40"> | `#303030` |  <img src="assets/light/overlay.svg" width="40">| `#CFCFCF` | overlay       | PopUps, Floats                                      |
+| <img src="assets/dark/text.svg" width="40">    | `#C1C7D6` |  <img src="assets/light/text.svg" width="40">   | `#525A69` | text          | Base Text, Foreground                               |
+| <img src="assets/dark/subtle.svg" width="40">  | `#727A8C` |  <img src="assets/light/subtle.svg" width="40"> | `#727A8C` | subtle        | Subtle Text, comments                               |
+| <img src="assets/dark/muted.svg" width="40">   | `#525A69` |  <img src="assets/light/muted.svg" width="40">  | `#C1C7D6` | muted         | Muted Text, virtual_text                            |
+| <img src="assets/dark/hl_low.svg" width="40">  | `#212121` |  <img src="assets/light/hl_low.svg" width="40"> | `#DEDEDE` | hl_low        |                                                     |
+| <img src="assets/dark/hl_med.svg" width="40">  | `#333333` |  <img src="assets/light/hl_med.svg" width="40"> | `#CBCBCB` | hl_med        |                                                     |
+| <img src="assets/dark/hl_high.svg" width="40"> | `#474747` |  <img src="assets/light/hl_high.svg" width="40">| `#B7B7B7` | hl_high       |                                                     |
+| <img src="assets/dark/red.svg" width="40">     | `#FF355B` |  <img src="assets/light/red.svg" width="40">    | `#FF355B` | Red           |                                                     |
+| <img src="assets/dark/green.svg" width="40">   | `#B7E876` |  <img src="assets/light/green.svg" width="40">  | `#70AE1E` | Green         |                                                     |
+| <img src="assets/dark/yellow.svg" width="40">  | `#FFC251` |  <img src="assets/light/yellow.svg" width="40"> | `#FFA600` | Yellow        |                                                     |
+| <img src="assets/dark/blue.svg" width="40">    | `#76D5FF` |  <img src="assets/light/blue.svg" width="40">   | `#00A4EB` | Blue          |                                                     |
+| <img src="assets/dark/magenta.svg" width="40"> | `#BA76E7` |  <img src="assets/light/magenta.svg" width="40">| `#BA76E7` | magenta       |                                                     |
+| <img src="assets/dark/cyan.svg" width="40">    | `#6CBFB5` |  <img src="assets/light/cyan.svg" width="40">   | `#4EB1A6` | cyan          |                                                     |
+| <img src="assets/dark/orange.svg" width="40">  | `#F34B00` |  <img src="assets/light/orange.svg" width="40"> | `#F34B00` | orange        |                                                     |
+| <img src="assets/dark/pink.svg" width="40">    | `#DD56A1` |  <img src="assets/light/pink.svg" width="40">   | `#DD56A1` | pink          |                                                     |
 
 ## Usage
 
