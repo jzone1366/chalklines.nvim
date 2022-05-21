@@ -57,6 +57,7 @@ Chalklines is a Light/Dark color scheme for neovim written in lua.
 ## Screenshots
 <p align="center">
   <img src="assets/ss1.png">
+  <img src="assets/ss2.png">
 </p>
 
 ## Color palette
