@@ -56,25 +56,25 @@ Chalklines is a Light/Dark color scheme for neovim written in lua.
 
 ## Color palette
 
-| Dark Palette                                   |    Hex    | Light Palette                                   |    Hex    | Name          | Usage                                               |
+| Dark                                           |    Hex    | Light                                           |    Hex    | Name          | Usage                                               |
 | :----------------------------------------------| :-------: | :-----------------------------------------------| :-------: | :------------ | :-------------------------------------------------- |
-| <img src="assets/dark/base.svg" width="40">    | `#181818` |  <img src="assets/light/base.svg" width="40">   | `#E7E7E7` | base          | Background                                          |
-| <img src="assets/dark/surface.svg" width="40"> | `#242424` |  <img src="assets/light/surface.svg" width="40">| `#DBDBDB` | surface       | StatusLine                                          |
-| <img src="assets/dark/overlay.svg" width="40"> | `#303030` |  <img src="assets/light/overlay.svg" width="40">| `#CFCFCF` | overlay       | PopUps, Floats                                      |
-| <img src="assets/dark/text.svg" width="40">    | `#C1C7D6` |  <img src="assets/light/text.svg" width="40">   | `#525A69` | text          | Base Text, Foreground                               |
-| <img src="assets/dark/subtle.svg" width="40">  | `#727A8C` |  <img src="assets/light/subtle.svg" width="40"> | `#727A8C` | subtle        | Subtle Text, comments                               |
-| <img src="assets/dark/muted.svg" width="40">   | `#525A69` |  <img src="assets/light/muted.svg" width="40">  | `#C1C7D6` | muted         | Muted Text, virtual_text                            |
-| <img src="assets/dark/hl_low.svg" width="40">  | `#212121` |  <img src="assets/light/hl_low.svg" width="40"> | `#DEDEDE` | hl_low        |                                                     |
-| <img src="assets/dark/hl_med.svg" width="40">  | `#333333` |  <img src="assets/light/hl_med.svg" width="40"> | `#CBCBCB` | hl_med        |                                                     |
-| <img src="assets/dark/hl_high.svg" width="40"> | `#474747` |  <img src="assets/light/hl_high.svg" width="40">| `#B7B7B7` | hl_high       |                                                     |
-| <img src="assets/dark/red.svg" width="40">     | `#FF355B` |  <img src="assets/light/red.svg" width="40">    | `#FF355B` | Red           |                                                     |
-| <img src="assets/dark/green.svg" width="40">   | `#B7E876` |  <img src="assets/light/green.svg" width="40">  | `#70AE1E` | Green         |                                                     |
-| <img src="assets/dark/yellow.svg" width="40">  | `#FFC251` |  <img src="assets/light/yellow.svg" width="40"> | `#FFA600` | Yellow        |                                                     |
-| <img src="assets/dark/blue.svg" width="40">    | `#76D5FF` |  <img src="assets/light/blue.svg" width="40">   | `#00A4EB` | Blue          |                                                     |
-| <img src="assets/dark/magenta.svg" width="40"> | `#BA76E7` |  <img src="assets/light/magenta.svg" width="40">| `#BA76E7` | magenta       |                                                     |
-| <img src="assets/dark/cyan.svg" width="40">    | `#6CBFB5` |  <img src="assets/light/cyan.svg" width="40">   | `#4EB1A6` | cyan          |                                                     |
-| <img src="assets/dark/orange.svg" width="40">  | `#F34B00` |  <img src="assets/light/orange.svg" width="40"> | `#F34B00` | orange        |                                                     |
-| <img src="assets/dark/pink.svg" width="40">    | `#DD56A1` |  <img src="assets/light/pink.svg" width="40">   | `#DD56A1` | pink          |                                                     |
+| <img src="assets/dark/base.svg" width="30">    | `#181818` |  <img src="assets/light/base.svg" width="30">   | `#E7E7E7` | base          | Background                                          |
+| <img src="assets/dark/surface.svg" width="30"> | `#242424` |  <img src="assets/light/surface.svg" width="30">| `#DBDBDB` | surface       | StatusLine                                          |
+| <img src="assets/dark/overlay.svg" width="30"> | `#303030` |  <img src="assets/light/overlay.svg" width="30">| `#CFCFCF` | overlay       | PopUps, Floats                                      |
+| <img src="assets/dark/text.svg" width="30">    | `#C1C7D6` |  <img src="assets/light/text.svg" width="30">   | `#525A69` | text          | Base Text, Foreground                               |
+| <img src="assets/dark/subtle.svg" width="30">  | `#727A8C` |  <img src="assets/light/subtle.svg" width="30"> | `#727A8C` | subtle        | Subtle Text, comments                               |
+| <img src="assets/dark/muted.svg" width="30">   | `#525A69` |  <img src="assets/light/muted.svg" width="30">  | `#C1C7D6` | muted         | Muted Text, virtual_text                            |
+| <img src="assets/dark/hl_low.svg" width="30">  | `#212121` |  <img src="assets/light/hl_low.svg" width="30"> | `#DEDEDE` | hl_low        |                                                     |
+| <img src="assets/dark/hl_med.svg" width="30">  | `#333333` |  <img src="assets/light/hl_med.svg" width="30"> | `#CBCBCB` | hl_med        |                                                     |
+| <img src="assets/dark/hl_high.svg" width="30"> | `#474747` |  <img src="assets/light/hl_high.svg" width="30">| `#B7B7B7` | hl_high       |                                                     |
+| <img src="assets/dark/red.svg" width="30">     | `#FF355B` |  <img src="assets/light/red.svg" width="30">    | `#FF355B` | Red           |                                                     |
+| <img src="assets/dark/green.svg" width="30">   | `#B7E876` |  <img src="assets/light/green.svg" width="30">  | `#70AE1E` | Green         |                                                     |
+| <img src="assets/dark/yellow.svg" width="30">  | `#FFC251` |  <img src="assets/light/yellow.svg" width="30"> | `#FFA600` | Yellow        |                                                     |
+| <img src="assets/dark/blue.svg" width="30">    | `#76D5FF` |  <img src="assets/light/blue.svg" width="30">   | `#00A4EB` | Blue          |                                                     |
+| <img src="assets/dark/magenta.svg" width="30"> | `#BA76E7` |  <img src="assets/light/magenta.svg" width="30">| `#BA76E7` | magenta       |                                                     |
+| <img src="assets/dark/cyan.svg" width="30">    | `#6CBFB5` |  <img src="assets/light/cyan.svg" width="30">   | `#4EB1A6` | cyan          |                                                     |
+| <img src="assets/dark/orange.svg" width="30">  | `#F34B00` |  <img src="assets/light/orange.svg" width="30"> | `#F34B00` | orange        |                                                     |
+| <img src="assets/dark/pink.svg" width="30">    | `#DD56A1` |  <img src="assets/light/pink.svg" width="30">   | `#DD56A1` | pink          |                                                     |
 
 ## Usage
 
