@@ -9,13 +9,15 @@ function M.get(cnf)
   local styles = cnf.styles
 
   return {
-    GlyphPalette0 = { fg = p.surface },
+    GlyphPalette0 = { fg = p.overlay },
     GlyphPalette1 = { fg = p.red },
     GlyphPalette2 = { fg = p.cyan },
     GlyphPalette3 = { fg = p.yellow },
     GlyphPalette4 = { fg = p.blue },
+    GlyphPalette5 = { fg = p.orange },
     GlyphPalette6 = { fg = p.cyan },
     GlyphPalette7 = { fg = p.foreground },
+    GlyphPalette8 = { fg = p.pink },
     GlyphPalette9 = { fg = p.red },
   }
 end

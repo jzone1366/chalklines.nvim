@@ -11,7 +11,6 @@ function M.get(cnf)
     WhichKeyGroup = { link = 'Function' },
     WhichKeyDesc = { link = 'Keyword' },
     WhichKeySeperator = { link = 'Comment' },
-    WhichKeySeparator = { link = 'Comment' },
     WhichKeyFloat = { bg = colorMaps.panel },
     WhichKeyValue = { link = 'Comment' },
   }
