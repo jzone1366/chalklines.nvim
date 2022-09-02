@@ -1,6 +1,6 @@
-<h3 align="center">
+<h1 align="center">
 	Chalklines for NeoVim
-</h3>
+</h1>
 
 <p align="center">
     <a href="https://github.com/jzone1366/chalklines.nvim/stargazers"><img src="https://img.shields.io/github/stars/jzone1366/chalklines.nvim?colorA=181818&colorB=BA76E7&style=for-the-badge&logo=starship style=for-the-badge"></a>
@@ -13,296 +13,380 @@
 Currently a WIP. Please check issues for things that are missing.
 Chalklines is a Light/Dark color scheme for neovim written in lua.
 
-# 🎁 Features
+## :book: Table of Contents<!-- omit in toc -->
 
--   Handy CLI.
--   Extensible for many use cases.
--   Integrations with a bunch of plugins:
-    - [BarBar](https://github.com/romgrk/barbar.nvim)
-    - [BufferLine](https://github.com/akinsho/bufferline.nvim)
-    - [Nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
-    - [Dashboard](https://github.com/glepnir/dashboard-nvim)
-    - [Fern](https://github.com/lambdalisue/fern.vim)
-    - [Fidget](https://github.com/j-hui/fidget.nvim)
-    - [Git Gutter](https://github.com/airblade/vim-gitgutter)
-    - [Git signs](https://github.com/lewis6991/gitsigns.nvim)
-    - [Glyph Palette](https://github.com/lambdalisue/glyph-palette.vim/)
-    - [Hop](https://github.com/phaazon/hop.nvim)
-    - [Indent Blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
-    - [Illuminate](https://github.com/RRethy/vim-illuminate)
-    - [Lightspeed](https://github.com/ggandor/lightspeed.nvim)
-    - [LSP Saga](https://github.com/glepnir/lspsaga.nvim)
-    - [Trouble](https://github.com/folke/trouble.nvim)
-    - [Modes](https://github.com/mvllow/modes.nvim)
-    - [Native LSP](https://github.com/neovim/nvim-lspconfig)
-    - [Neogit](https://github.com/TimUntersberger/neogit)
-    - [Neorg](https://github.com/nvim-neorg/neorg)
-    - [Neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim)
-    - [Notify](https://github.com/rcarriga/nvim-notify)
-    - [NvimTree](https://github.com/kyazdani42/nvim-tree.lua)
-    - [Pounce](https://github.com/rlane/pounce.nvim)
-    - [Sneak](https://github.com/justinmk/vim-sneak)
-    - [Symbols-Outline](https://github.com/simrat39/symbols-outline.nvim)
-    - [Telescope](https://github.com/nvim-telescope/telescope.nvim)
-    - [Telekasten](https://github.com/renerocksai/telekasten.nvim)
-    - [Treesitter](https://github.com/tree-sitter/tree-sitter)
-    - [Nvim-ts-Rainbow](https://github.com/p00f/nvim-ts-rainbow)
-    - [Vim Wiki](https://github.com/vimwiki/vimwiki)
-    - [WhichKey](https://github.com/folke/which-key.nvim)
-    - [Feline](https://github.com/feline-nvim/feline.nvim)
-    - [Markdown](https://www.markdownguide.org/)
-    - [Lualine](https://github.com/hoob3rt/lualine.nvim)
-    - [Lightline](https://github.com/itchyny/lightline.vim)
+- [Features](#features)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Configuration](#configuration)
+  - [Default configuration](#default-configuration)
+  - [Configuring themes](#configuring-themes)
+  - [Configuring plugins](#configuring-plugins)
+  - [Configuring styles](#configuring-styles)
+  - [Configuring colors](#configuring-colors)
+  - [Configuring highlight groups](#configuring-highlight-groups)
+  - [Configuring filetype highlight groups](#configuring-filetype-highlight-groups)
+  - [Configuring options](#configuring-options)
+- [Supported Plugins](#supported-plugins)
+- [Comparison to VS Code's One Dark Pro](#microscope-comparison-to-vs-codes-one-dark-pro)
+- [Extras](#extras)
+- [FAQs](#faqs)
+- [Credits](#credits)
 
-## Screenshots
-<p align="center">
-  <img src="assets/ss1.png">
-  <img src="assets/ss2.png">
-</p>
+## Features
 
-## Color palette
+- Override default styles, colors and highlight groups
+- Create custom highlight groups and even highlight groups by filetypes
+- [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) support
+- Support for many [popular plugins](#electric_plug-supported-plugins)
 
-| Dark                                           |    Hex    | Light                                           |    Hex    | Name          | Usage                                               |
-| :----------------------------------------------| :-------: | :-----------------------------------------------| :-------: | :------------ | :-------------------------------------------------- |
-| <img src="assets/dark/base.svg" width="30">    | `#181818` |  <img src="assets/light/base.svg" width="30">   | `#E7E7E7` | base          | Background                                          |
-| <img src="assets/dark/surface.svg" width="30"> | `#242424` |  <img src="assets/light/surface.svg" width="30">| `#DBDBDB` | surface       | StatusLine                                          |
-| <img src="assets/dark/overlay.svg" width="30"> | `#303030` |  <img src="assets/light/overlay.svg" width="30">| `#CFCFCF` | overlay       | PopUps, Floats                                      |
-| <img src="assets/dark/text.svg" width="30">    | `#C1C7D6` |  <img src="assets/light/text.svg" width="30">   | `#525A69` | text          | Base Text, Foreground                               |
-| <img src="assets/dark/subtle.svg" width="30">  | `#727A8C` |  <img src="assets/light/subtle.svg" width="30"> | `#727A8C` | subtle        | Subtle Text, comments                               |
-| <img src="assets/dark/muted.svg" width="30">   | `#525A69` |  <img src="assets/light/muted.svg" width="30">  | `#C1C7D6` | muted         | Muted Text, virtual_text                            |
-| <img src="assets/dark/hl_low.svg" width="30">  | `#212121` |  <img src="assets/light/hl_low.svg" width="30"> | `#DEDEDE` | hl_low        |                                                     |
-| <img src="assets/dark/hl_med.svg" width="30">  | `#333333` |  <img src="assets/light/hl_med.svg" width="30"> | `#CBCBCB` | hl_med        |                                                     |
-| <img src="assets/dark/hl_high.svg" width="30"> | `#474747` |  <img src="assets/light/hl_high.svg" width="30">| `#B7B7B7` | hl_high       |                                                     |
-| <img src="assets/dark/red.svg" width="30">     | `#FF355B` |  <img src="assets/light/red.svg" width="30">    | `#FF355B` | Red           |                                                     |
-| <img src="assets/dark/green.svg" width="30">   | `#B7E876` |  <img src="assets/light/green.svg" width="30">  | `#70AE1E` | Green         |                                                     |
-| <img src="assets/dark/yellow.svg" width="30">  | `#FFC251` |  <img src="assets/light/yellow.svg" width="30"> | `#FFA600` | Yellow        |                                                     |
-| <img src="assets/dark/blue.svg" width="30">    | `#76D5FF` |  <img src="assets/light/blue.svg" width="30">   | `#00A4EB` | Blue          |                                                     |
-| <img src="assets/dark/magenta.svg" width="30"> | `#BA76E7` |  <img src="assets/light/magenta.svg" width="30">| `#BA76E7` | magenta       |                                                     |
-| <img src="assets/dark/cyan.svg" width="30">    | `#6CBFB5` |  <img src="assets/light/cyan.svg" width="30">   | `#4EB1A6` | cyan          |                                                     |
-| <img src="assets/dark/orange.svg" width="30">  | `#F34B00` |  <img src="assets/light/orange.svg" width="30"> | `#F34B00` | orange        |                                                     |
-| <img src="assets/dark/pink.svg" width="30">    | `#DD56A1` |  <img src="assets/light/pink.svg" width="30">   | `#DD56A1` | pink          |                                                     |
+## Requirements
 
+- Neovim 0.5+ (0.7+ for filetype highlights)
+- `termguicolors` enabled for true color support
+- `treesitter` for full syntax highlighting
+
+## Installation
+
+Install with your package manager:
+
+```lua
+use "jzone1366/chalklines.nvim"    -- Packer
+```
+```vim
+Plug 'jzone1366/chalklines.nvim'   " Vim-Plug
+```
 ## Usage
 
-You can use your favorite plugin manager for this. Here are some examples with the most popular ones:
-
-#### Vim-plug
+Use the built-in `:colorscheme` command to load:
 
 ```lua
-Plug 'chalklines.nvim', {'as': 'chalklines'}
+vim.cmd("colorscheme chalklines")  -- Lua
 ```
-
-#### Packer.nvim
-
-```lua
-use({
-	'chalklines.nvim',
-	as = 'chalklines'
-})
-```
-
-#### Vundle
-
-```lua
-Plugin 'chalklines.nvim', {'name': 'chalklines'}
-```
-
-### Setup
-
-There are already some sane defaults that you may like, however you can change them to match your taste. These are the defaults:
-
-```lua
-bold_vert_split = false,
-dim_nc_background = false,
-disable_background = false,
-disable_float_background = false,
-disable_italics = false,
-
-modules = {
-  barbar = true,
-  bufferline = true,
-  cmp = true,
-  dashboard = true,
-  diagnostic = {
-    enable = true,
-    background = true,
-  },
-  fern = true,
-  fidget = true,
-  gitgutter = true,
-  gitsigns = true,
-  glyph_palette = true,
-  hop = true,
-  indent_blankline = true,
-  illuminate = true,
-  lightspeed = true,
-  lsp_saga = true,
-  lsp_trouble = true,
-  modes = true,
-  native_lsp = true,
-  neogit = true,
-  neorg = true,
-  neotree = true,
-  notify = true,
-  nvimtree = true,
-  pounce = true,
-  sneak = true,
-  symbol_outline = true,
-  telescope = true,
-  treesitter = true,
-  tsrainbow = true,
-  vimwiki = true,
-  whichkey = true,
-},
-
-colorMaps = {
-  background = 'base',
-  panel = 'surface',
-  border = 'hl_med',
-  comment = 'muted',
-  link = 'magenta',
-  punctuation = 'muted',
-
-  error = 'red',
-  hint = 'magenta',
-  info = 'blue',
-  warn = 'yellow',
-
-  git_add = 'blue',
-  git_change = 'cyan',
-  git_delete = 'red',
-  git_dirty = 'cyan',
-  git_ignore = 'muted',
-  git_merge = 'magenta',
-  git_rename = 'green',
-  git_stage = 'magenta',
-  git_text = 'cyan',
-
-  headings = {
-    h1 = 'magenta',
-    h2 = 'blue',
-    h3 = 'cyan',
-    h4 = 'yellow',
-    h5 = 'green',
-    h6 = 'blue',
-  },
-},
-}
-```
-
-The way you setup the settings on your configuration varies on whether you are using vimL for this or Lua.
-
-<details>
-    <summary>For init.lua</summary>
-<p>
-
-```lua
-local chalklines = require("chalklines")
-
--- configure it
-chalklines.setup(<settings>)
-```
-
-<br />
-</details>
-
-<details>
-    <summary>For init.vim</summary>
-<p>
-
-```lua
-lua << EOF
-local chalklines = require("chalklines")
-
--- configure it
-chalklines.setup(<settings>)
-EOF
-```
-
-<br />
-</details>
-
-After setting things up, you can load chalklines like so:
-
 ```vim
-" Vim Script
-colorscheme chalklines
+colorscheme chalklines             " Vimscript
 ```
 
-```lua
--- Lua
-vim.cmd[[colorscheme chalklines]]
-```
+## Configuration
 
-### Configuration
+### Default configuration
 
-Although settings already have self-explanatory names, here is where you can find info about each one of them and their classifications!
-
-#### General
-You must set the background to either light / dark if depending on the colors you would like.
-
-This settings are unrelated to any group and are independent.
-
--   `transparent_background`: (Boolean) if true, disables setting the background color.
--   `term_colors`: (Boolean) if true, sets terminal colors (e.g. `g:terminal_color_0`).
-
-#### Integrations
-
-These integrations allow chalklines to set the theme of various plugins/stuff. To enable an integration you just need to set it to `true`, however, there are some special integrations...
-
-If you'd like to know which highlight groups are being affected by chalklines, checkout this directory: [`lua/chalklines/group/modules/`](https://github.com/chalklines.nvim/tree/main/lua/chalklines/core/integrations).
-
-##### Special Integrations
-
--   **Feline.nvim**: chalklines provides this integration as a component that you can select on your Feline config:
+A call to the `setup` function is only required if you wish to change the defaults:
 
 ```lua
-require("feline").setup({
-	components = require('chalklines.group.modules.feline'),
+require("chalklines").setup({
+  dark_theme = "chalklines_main", -- The default dark theme
+  light_theme = "chalklines_bright", -- The default light theme
+  -- The theme function can be overwritten with a string value for the theme
+  theme = function()
+      if vim.o.background == "dark" then
+          return config.dark_theme
+      else
+          return config.light_theme
+      end
+  end,
+  colors = {}, -- Override default colors by specifying colors for 'chalklines_main' or 'chalklines_bright' themes
+  hlgroups = {}, -- Override default highlight groups
+  filetype_hlgroups = {}, -- Override default highlight groups for specific filetypes
+  plugins = { -- Override which plugin highlight groups are loaded
+    -- ...
+  },
+  styles = { -- Choose from "bold,italic,underline"
+      strings = "NONE", -- Style that is applied to strings.
+      comments = "NONE", -- Style that is applied to comments
+      keywords = "NONE", -- Style that is applied to keywords
+      functions = "NONE", -- Style that is applied to functions
+      variables = "NONE", -- Style that is applied to variables
+      virtual_text = "NONE", -- Style that is applied to virtual text
+  },
+  options = {
+      bold = false, -- Use the colorscheme's opinionated bold styles?
+      italic = false, -- Use the colorscheme's opinionated italic styles?
+      underline = false, -- Use the colorscheme's opinionated underline styles?
+      undercurl = false, -- Use the colorscheme's opinionated undercurl styles?
+      cursorline = false, -- Use cursorline highlighting?
+      transparency = false, -- Use a transparent background?
+      terminal_colors = false, -- Use the colorscheme's colors for Neovim's :terminal?
+      window_unfocussed_color = false, -- When the window is out of focus, change the normal background?
+  }
 })
 ```
 
--   **Indent-blankline.nvim**: setting `enabled` to `true` enables this integration. `colored_indent_levels` enables char highlights per indent level. Follow the instructions [here](https://github.com/lukas-reineke/indent-blankline.nvim#with-custom-gindent_blankline_char_highlight_list) to set the latter up.
--   **Lightline:** use this to set it up (Note: `chalklines` is the only valid colorscheme name. It will pick the one set in your config):
+### Configuring themes
+
+Currently, there are two themes available:
+
+- `chalklines_main`
+- `chalklines_bright`
+
+A default theme can be set with:
 
 ```lua
-let g:lightline = {'colorscheme': 'chalklines'}
+theme = "chalklines_main",
 ```
 
--   **Lualine:** use this to set it up (Note: `chalklines` is the only valid theme name. It will pick the one set in your config):
+If no value is specified, the colorscheme will use the values as per the default config which uses `vim.o.background`. With a dark background, the theme will use `onedark` and with a light background, `onelight`, by default. For greater customisation with `vim.o.background`, default dark and light themes can be set:
 
 ```lua
-require('lualine').setup {
-  options = {
-    theme = "chalklines"
-	-- ... the rest of your lualine config
+dark_theme = "chalklines_main",
+light_theme = "chalklines_bright",
+```
+
+### Configuring plugins
+
+By default, all of the plugins supported by the theme are loaded at runtime. Specific plugins can be disabled as follows:
+
+```lua
+plugins = {
+  native_lsp = false,
+  polygot = false,
+  treesitter = false
+}
+```
+
+Alternatively, all of the plugins can be disabled at once:
+
+```lua
+plugins = {
+  all = false
+}
+```
+
+Or, all of the plugins can be disabled with only a select few enabled:
+
+```lua
+plugins = {
+  all = false
+  native_lsp = true,
+  treesitter = true
+}
+```
+
+> **Note:** For a full list of plugins supported, and their names, see the plugins [section](#electric_plug-supported-plugins)
+
+### Configuring styles
+
+Within the colorscheme, collections of highlight groups have been grouped together into `styles`. For users who use monospaced fonts with nice italics, this can go someway to enhancing the aesthetic of the colorscheme. These styles may be configured as below:
+
+```lua
+styles = {
+  comments = "italic",
+  functions = "NONE",
+  keywords = "bold,italic",
+  strings = "NONE",
+  variables = "NONE",
+  virtual_text = "NONE"
+}
+```
+
+| **Note:** See the [Neovim help](https://neovim.io/doc/user/api.html#nvim_set_hl()) for a full list of styles
+
+### Configuring colors
+
+The colorscheme has a palette of 13 core colors alongside many additional ones which are used for menus and git diffs. These colors can be found in the [themes](https://github.com/jzone1366/chalklines.nvim/tree/main/lua/chalklines/themes).
+
+The default colors can be changed by specifying the name of the color and a new hex code:
+
+```lua
+colors = {
+  red = "#FF0000"
+}
+```
+
+#### Specifying new colors
+
+New colors may be created which will then be merged into a theme's color palette:
+
+```lua
+colors = {
+  my_new_red = "#f44336"
+}
+```
+
+> **Note:** Custom colors can also be referenced when creating custom highlight group overrides
+
+#### Specifying colors by theme
+
+It's possible to override default colors within a theme such as the `bg` color. This is a common question for those who wish to have a darker background than the default. Of course it would make sense to have different `bg` colors for the `chalklines_main` and `chalklines_bright` themes. This can be achieved by specifying the theme name as a table, followed by the color:
+
+```lua
+colors = {
+  chalklines_main = {
+    bg = "#FFFF00" -- yellow
+  },
+  chalklines_bright = {
+    bg = "#00FF00" -- green
   }
 }
 ```
 
--   **Native Nvim LSP:** setting `enabled` to `true` enables this integration. In the inners tables you can set the style for the diagnostics, both `virtual_text` (what you see on the side) and `underlines` (what points directly at the thing (e.g. an error)).
--   **NvimTree:** setting `enabled` to `true` enables this integration:
+### Configuring highlight groups
+
+The [editor](https://github.com/jzone1366/chalklines.nvim/tree/main/lua/chalklines/highlights/editor.lua), [syntax](https://github.com/jzone1366/chalklines.nvim/tree/main/lua/chalklines/highlights/syntax.lua) and [plugin](https://github.com/jzone1366/chalklines.nvim/tree/main/lua/chalklines/highlights/plugins) files use a large array of highlight groups. There are three ways to customize or *override* them:
+
+1. Using specific hex colors:
+```lua
+hlgroups = {
+  Comment = { fg = "#FF0000", bg = "#FFFF00" }
+}
+```
+2. Referencing the name of colors:
+```lua
+hlgroups = {
+  Comment = { fg = "${my_new_red}" bg = "${yellow}" }
+}
+```
+3. Linking to other highlight groups:
+```lua
+hlgroups = {
+  Comment = { link = "Substitute" }
+}
+```
+
+### Configuring filetype highlight groups
 
 ```lua
-integration = {
-  nvimtree = {
-    enabled = true,
-    show_root = true, -- makes the root folder not transparent
-	transparent_panel = false, -- make the panel transparent
+filetype_hlgroups = {
+  -- Use the filetype as per the `set filetype?` command
+  yaml = {
+    TSField = { fg = "${red}" }
+  },
+  python = {
+    TSConstructor = { fg = "${bg}", bg = "${red}" }
   }
 }
 ```
--   **Neo-tree:** setting `enabled` to `true` enables this integration:
+
+> **Note:**
+> - Neovim 0.7+ is required for filetype highlights
+> - Currently support for highlighting in Telescope's previewer is unavailable
+> - The excellent [hlargs.nvim](https://github.com/m-demare/hlargs.nvim) plugin allows for greater customisation over arguments definitions and usages
+
+#### Ignoring filetypes and buffer types
+
+Certain file and buffer types may be ignored to prevent filetype highlights being overwritten when navigating to a new
+buffer. The default types to be ignored are:
 
 ```lua
-integration = {
-  neotree = {
-    enabled = true,
-    show_root = true, -- makes the root folder not transparent
-	transparent_panel = false, -- make the panel transparent
+filetype_hlgroups_ignore = {
+  filetypes = {
+    "^aerial$",
+    "^alpha$",
+    "^fugitive$",
+    "^fugitiveblame$",
+    "^help$",
+    "^NvimTree$",
+    "^packer$",
+    "^qf$",
+    "^startify$",
+    "^startuptime$",
+    "^TelescopePrompt$",
+    "^TelescopeResults$",
+    "^terminal$",
+    "^toggleterm$",
+    "^undotree$"
+  },
+  buftypes = {
+    "^terminal$"
   }
+```
+
+### Configuring options
+
+#### Formatting
+
+Alongside styles, the colorscheme applies some opinionated formatting. These can be configured with the following options:
+
+```lua
+options = {
+  bold = true, -- Use the colorscheme's opinionated bold styles?
+  italic = true, -- Use the colorscheme's opinionated italic styles?
+  underline = true, -- Use the colorscheme's opinionated underline styles?
+  undercurl = true -- Use the colorscheme's opinionated undercurl styles?
 }
 ```
+
+#### Transparency
+
+The colorscheme supports transparent backgrounds:
+
+```lua
+options = {
+  transparency = true
+}
+```
+
+By setting the transparency option to true, the `Normal`, `Folded`, `SignColumn`, `Statusline` and `Tabline` groups will have `NONE` as the background color. Additional transparency may be achieved by overriding more highlight groups.
+
+#### Terminal Colors
+
+The colorscheme supports changing the colors for Neovim's `:terminal` to the current theme:
+
+```lua
+options = {
+  terminal_colors = true
+}
+```
+
+#### Window Focus Color
+
+The colorscheme supports changing the color of the main window in Neovim when focussed is lost. For example, when a `telescope` or `packer` pop up appears:
+
+```lua
+options = {
+  window_unfocussed_color = true
+}
+```
+
+> **Note:** This can be seen in the screenshots above where `nvim-tree` is opened and out of focus
+
+#### Cursorline
+
+Cursorline highlighting is supported in the colorscheme using a `cursorline` color (which may of course be overriden). This can be enabled with the following:
+
+```lua
+colors = {
+  cursorline = "#FF0000" -- This is optional. The default cursorline color is based on the background
+},
+options = {
+  cursorline = true
+}
+```
+
+## Supported Plugins
+
+The colorscheme supports the following plugins:
+  - [aerial.nvim](https://github.com/stevearc/aerial.nvim) (`aerial`)
+  - [barbar.nvim](https://github.com/romgrk/barbar.nvim) (`barbar`)
+  - [Copilot.vim](https://github.com/github/copilot.vim) (`copilot`)
+  - [Dashboard](https://github.com/glepnir/dashboard-nvim) (`dashboard`)
+  - [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) (`gitsigns_nvim`)
+  - [Hop.nvim](https://github.com/phaazon/hop.nvim) (`hop`)
+  - [Indent Blankline](https://github.com/lukas-reineke/indent-blankline.nvim/tree/lua) (`indentline`)
+  - [lspsaga.nvim](https://github.com/glepnir/lspsaga.nvim) (`lsp_saga`)
+  - [marks.nvim](https://github.com/chentau/marks.nvim) (`marks`)
+  - [Neotest](https://github.com/nvim-neotest/neotest) (`neotest`)
+  - [neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim) (`neo_tree`)
+  - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) (`nvim_cmp`)
+  - [nvim-dap](https://github.com/mfussenegger/nvim-dap) (`nvim_dap`)
+  - [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui) (`nvim_dap_ui`)
+  - [nvim-hlslens](https://github.com/kevinhwang91/nvim-hlslens) (`nvim_hlslens`)
+  - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) (`native_lsp`)
+  - [nvim-navic](https://github.com/SmiteshP/nvim-navic) (`nvim_navic`)
+  - [nvim-notify](https://github.com/rcarriga/nvim-notify) (`nvim_notify`)
+  - [nvim-tree](https://github.com/kyazdani42/nvim-tree.lua) (`nvim_tree`)
+  - [nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow) (`nvim_ts_rainbow`)
+  - [packer.nvim](https://github.com/wbthomason/packer.nvim) (`packer`)
+  - [polygot](https://github.com/sheerun/vim-polyglot) (`polygot`)
+  - [startify](https://github.com/mhinz/vim-startify) (`startify`)
+  - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) (`telescope`)
+  - [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim) (`toggleterm`)
+  - [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) (`treesitter`)
+  - [Trouble](https://github.com/folke/trouble.nvim) (`trouble_nvim`)
+  - [Vim Ultest](https://github.com/rcarriga/vim-ultest) (`vim_ultest`)
+  - [Which Key](https://github.com/folke/which-key.nvim) (`which_key_nvim`)
+
 ## Support Me
 <p align="center">
 	<a href="https://www.buymeacoffee.com/jzone1366"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a beer&emoji=🍺&slug=jzone1366&button_colour=f24b03&font_colour=000000&font_family=Lato&outline_colour=000000&coffee_colour=FFDD00" /></a>

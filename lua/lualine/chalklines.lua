@@ -1,34 +1,37 @@
-local p = require('chalklines.palette').init()
+local colors = require('chalklines').get_colors()
 
-return {
-  normal = {
-    a = { bg = p.cyan, fg = p.base, gui = 'bold' },
-    b = { bg = p.overlay, fg = p.cyan },
-    c = { bg = p.base, fg = p.text },
-  },
-  insert = {
-    a = { bg = p.blue, fg = p.base, gui = 'bold' },
-    b = { bg = p.overlay, fg = p.blue },
-    c = { bg = p.base, fg = p.text },
-  },
-  visual = {
-    a = { bg = p.magenta, fg = p.base, gui = 'bold' },
-    b = { bg = p.overlay, fg = p.magenta },
-    c = { bg = p.base, fg = p.text },
-  },
-  replace = {
-    a = { bg = p.green, fg = p.base, gui = 'bold' },
-    b = { bg = p.overlay, fg = p.green },
-    c = { bg = p.base, fg = p.text },
-  },
-  command = {
-    a = { bg = p.red, fg = p.base, gui = 'bold' },
-    b = { bg = p.overlay, fg = p.red },
-    c = { bg = p.base, fg = p.text },
-  },
-  inactive = {
-    a = { bg = p.base, fg = p.muted, gui = 'bold' },
-    b = { bg = p.base, fg = p.muted },
-    c = { bg = p.base, fg = p.muted },
-  },
+local chalklines = {}
+
+chalklines.normal = {
+  a = { bg = colors.green, fg = colors.bg },
+  b = { bg = colors.fg_gutter, fg = colors.green },
+  c = { bg = colors.bg_statusline, fg = colors.fg },
 }
+
+chalklines.insert = {
+  a = { bg = colors.blue, fg = colors.bg },
+  b = { bg = colors.fg_gutter, fg = colors.blue },
+}
+
+chalklines.command = {
+  a = { bg = colors.purple, fg = colors.bg },
+  b = { bg = colors.fg_gutter, fg = colors.purple },
+}
+
+chalklines.visual = {
+  a = { bg = colors.yellow, fg = colors.bg },
+  b = { bg = colors.fg_gutter, fg = colors.yellow },
+}
+
+chalklines.replace = {
+  a = { bg = colors.red, fg = colors.bg },
+  b = { bg = colors.fg_gutter, fg = colors.red },
+}
+
+chalklines.inactive = {
+  a = { bg = colors.bg_statusline, fg = colors.blue },
+  b = { bg = colors.bg_statusline, fg = colors.fg_gutter, gui = 'bold' },
+  c = { bg = colors.bg_statusline, fg = colors.fg_gutter },
+}
+
+return chalklines

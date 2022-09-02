@@ -1,3 +1,3 @@
-lua package.loaded['chalklines.palette'] = nil
-
-lua require('chalklines').setup()
+lua << EOF
+require('chalklines').load()
+EOF

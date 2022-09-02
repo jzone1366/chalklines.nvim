@@ -1,28 +1,8 @@
-local template = require 'chalklines.lib.template'
-
-local M = {}
-
-function M.generate(theme)
-  local colors = theme.generated
-  local fishColors = {}
-
-  for k, v in pairs(colors) do
-    if type(v) == 'string' then
-      -- Fish does not use the format `#` for hex colors it uses `0x`
-      fishColors[k] = v:gsub('^#', '')
-    else
-      fishColors[k] = v
-    end
-  end
-
-  fishColors.meta = theme.meta
-
-  local content = [[
 # Chalklines Color Palette
-# Style: ${meta.name}
-# Upstream: ${meta.url}
+# Style: chalklines_bright
+# Upstream: https://github.com/jzone1366/chalklines.nvim/raw/main/extra/chalklines_bright/chalklines_bright_fish.fish
 set -l foreground ${fg}
-set -l selection ${selection}
+set -l selection F1FFFF
 set -l comment ${gray}
 set -l red ${red}
 set -l orange ${orange}
@@ -51,11 +31,4 @@ set -g fish_pager_color_progress $comment
 set -g fish_pager_color_prefix $cyan
 set -g fish_pager_color_completion $foreground
 set -g fish_pager_color_description $comment
-  ]]
-
-  local fish = template.parse_template_str(content, fishColors)
-
-  return fish
-end
-
-return M
+  

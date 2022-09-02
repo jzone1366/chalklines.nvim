@@ -1,14 +1,5 @@
-local template = require 'chalklines.lib.template'
-
-local M = {}
-
-function M.generate(theme)
-  local winColors = theme.generated
-  winColors.meta = theme.meta
-
-  local content = [[
 {
-    "name" : "${meta.name}",
+    "name" : "chalklines_main",
 
     "background" : "${bg}",
     "foreground" : "${fg}",
@@ -31,11 +22,4 @@ function M.generate(theme)
     "brightWhite" : "${white}",
     "brightYellow" : "${yellow}"
 },
-  ]]
-
-  local winterm = template.parse_template_str(content, winColors)
-
-  return winterm
-end
-
-return M
+  

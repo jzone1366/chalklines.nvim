@@ -1,15 +1,6 @@
-local template = require 'chalklines.lib.template'
-
-local M = {}
-
-function M.generate(theme)
-  local weztermColors = theme.generated
-  weztermColors.meta = theme.meta
-
-  local content = [[
 -- Chalklines Wezterm Colors
--- Style: ${meta.name}
--- Upstream: ${meta.url}
+-- Style: chalklines_main
+-- Upstream: https://github.com/jzone1366/chalklines.nvim/raw/main/extra/chalklines_main/chalklines_main_wezterm.lua
 return {
   force_reverse_video_cursor = true,
   colors = {
@@ -62,11 +53,4 @@ return {
 		compose_cursor = "${orange}",
   },
 }
-    ]]
-
-  local wezterm = template.parse_template_str(content, weztermColors)
-
-  return wezterm
-end
-
-return M
+    

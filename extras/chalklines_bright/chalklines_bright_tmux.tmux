@@ -1,29 +1,9 @@
-local template = require 'chalklines.lib.template'
-
-local M = {}
-
--- NOTE: you can use vars with $<var> and ${<var>} as long as the str is double quoted: ""
--- WARNING: hex colors can't contain capital letters
-function M.generate(theme)
-  local colors = theme.generated
-  local tmuxColors = {}
-  for k, v in pairs(colors) do
-    if type(v) == 'string' and string.match(v, '#') then
-      tmuxColors[k] = v:lower()
-    else
-      tmuxColors[k] = v
-    end
-  end
-
-  tmuxColors.meta = theme.meta
-
-  local content = [[
 # NOTE: you can use vars with $<var> and ${<var>} as long as the str is double quoted: ""
 # WARNING: hex colors can't contain capital letters
 
 # Chalklines Tmux Colors
-# Style: ${meta.name}
-# Upstream: ${meta.url}
+# Style: chalklines_bright
+# Upstream: https://github.com/jzone1366/chalklines.nvim/raw/main/extra/chalklines_bright/chalklines_bright_tmux.tmux
     thm_bg="${bg}"
     thm_bg_gutter="${bg}"
     thm_fg="${fg}"
@@ -35,7 +15,7 @@ function M.generate(theme)
     thm_yellow="${yellow}"
     thm_blue="${blue}"
     thm_orange="${orange}"
-    thm_bg_highlight="${fg_gutter}"
+    thm_bg_highlight="#f2ffff"
 
 # ----------------------------=== Theme ===--------------------------
 
@@ -72,11 +52,3 @@ function M.generate(theme)
 # --------=== Modes
     setw -g clock-mode-colour "$thm_blue"
     setw -g mode-style "fg=$thm_cyan bg=$thm_bg_highlight bold"
-]]
-
-  local tmux = template.parse_template_str(content, tmuxColors)
-
-  return tmux
-end
-
-return M

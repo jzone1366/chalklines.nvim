@@ -24,14 +24,9 @@ for extra, ext in pairs(extras) do
   local plugin = require('chalklines.extras.' .. extra)
   for _, style in ipairs(color_module.themes) do
     local theme = require(string.format('chalklines.themes.%s', style))
-    local filename = string.format('%s/%s_%s.%s', style, style, extra, ext)
-
-    if type(theme.generated) == 'function' then
-      theme.generated = theme.generated(theme.palette)
-    end
-
+    local filename = string.format('%s/chalklines_%s_%s.%s', style, style, extra, ext)
+    theme.meta.name = string.format('chalklines_%s', style)
     theme.meta.url = 'https://github.com/jzone1366/chalklines.nvim/raw/main/extra/' .. filename
-
     write(plugin.generate(theme), filename)
   end
 end

@@ -1,0 +1,21 @@
+! Twilight colors for Xresources
+! Style: chalklines_bright
+! Upstream: https://github.com/jzone1366/chalklines.nvim/raw/main/extra/chalklines_bright/chalklines_bright_xresources.Xresources
+*background: ${bg}
+*foreground: ${fg}
+*color0:  ${black}
+*color1:  ${red}
+*color2:  ${green}
+*color3:  ${yellow}
+*color4:  ${blue}
+*color5:  ${purple}
+*color6:  ${cyan}
+*color7:  ${white}
+*color8:  ${bg}
+*color9:  ${red}
+*color10: ${green}
+*color11: ${yellow}
+*color12: ${blue}
+*color13: ${purple}
+*color14: ${cyan}
+*color15: ${white}
